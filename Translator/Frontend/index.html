@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Language Translator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🌍 Language Translator</h1>
+
+        <!-- Input -->
+        <div class="input-section">
+
+            <label for="inputText">Enter Text</label>
+
+            <textarea
+                id="inputText"
+                placeholder="Type something here..."></textarea>
+
+        </div>
+
+        <!-- Languages -->
+        <div class="language-section">
+
+            <div class="language-box">
+
+                <label for="sourceLanguage">From</label>
+
+                <select id="sourceLanguage"></select>
+
+            </div>
+
+            <button id="swapBtn" title="Swap Languages">
+                ⇄
+            </button>
+
+            <div class="language-box">
+
+                <label for="targetLanguage">To</label>
+
+                <select id="targetLanguage"></select>
+
+            </div>
+
+        </div>
+
+        <!-- Translate Button -->
+
+        <button id="translateBtn">
+            Translate
+        </button>
+
+        <!-- Output -->
+
+        <div class="output-section">
+
+            <label for="outputText">Translation</label>
+
+            <textarea
+                id="outputText"
+                readonly
+                placeholder="Translated text will appear here..."></textarea>
+
+        </div>
+
+        <!-- Bottom Buttons -->
+
+        <div class="action-buttons">
+
+            <button id="copyBtn">Copy Text</button> 
+            
+<!-- Or if it's an icon tag like <i>, make sure id="copyBtn" is on the element you want to click -->
+
+        </div>
+
+    </div>
+
+    <script src="languages.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>

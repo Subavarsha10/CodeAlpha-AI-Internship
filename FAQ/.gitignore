@@ -1,0 +1,19 @@
+# Python environment & cache
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+
+# Environment Variables
+.env
+
+# IDE / OS settings
+.vscode/
+.idea/
+.DS_Store
+
+# NLTK Data directory if downloaded locally
+nltk_data/

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeAlpha AI FAQ Chatbot</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-logo">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="brand-title">
+                    <h2>CodeAlpha</h2>
+                    <span>AI Assistant</span>
+                </div>
+            </div>
+
+            <div class="status-panel">
+                <div class="status-card">
+                    <div class="status-indicator online"></div>
+                    <div class="status-info">
+                        <span class="status-label">FAQ Knowledge Base</span>
+                        <span class="status-value">100+ Topics Vectorized</span>
+                    </div>
+                </div>
+                <div class="status-card">
+                    <div class="status-indicator online" id="aiStatusDot"></div>
+                    <div class="status-info">
+                        <span class="status-label">Groq AI Engine</span>
+                        <span class="status-value">Llama 3 Fallback</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-actions">
+                <button id="clearChatBtn" class="btn btn-secondary" title="Clear Chat History">
+                    <i class="fa-solid fa-trash-can"></i> Clear History
+                </button>
+            </div>
+
+            <div class="sidebar-footer">
+                <p>CodeAlpha AI Internship Project</p>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-viewport">
+            <!-- Header Bar -->
+            <header class="chat-header">
+                <div class="header-info">
+                    <h1>CS & AI Intelligence Hub</h1>
+                    <p>Ask anything about Computer Science, Algorithms, or AI Concepts.</p>
+                </div>
+                <div class="header-actions">
+                    <button id="themeToggleBtn" class="theme-toggle" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Message Stream Area -->
+            <div class="chat-messages" id="chatMessages">
+                <!-- Messages dynamic injection target -->
+            </div>
+
+            <!-- Typing/Loading Indicator -->
+            <div class="typing-indicator-container hidden" id="typingContainer">
+                <div class="bot-avatar-small">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <div class="typing-bubble">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+
+            <!-- Input Bar Area -->
+            <div class="chat-input-wrapper">
+                <form id="chatForm" class="chat-input-form">
+                    <input 
+                        type="text" 
+                        id="userInput" 
+                        placeholder="Type your question here (e.g., What is Machine Learning?)" 
+                        autocomplete="off"
+                        required
+                    />
+                    <button type="submit" id="sendBtn" class="btn-send" aria-label="Send Message">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
